@@ -37,10 +37,15 @@
         <entry key="..\:/Users/user/EMP/app/src/main/res/drawable/check_box.xml" value="0.2415" />
         <entry key="..\:/Users/user/EMP/app/src/main/res/drawable/edit_text_style.xml" value="0.2415" />
         <entry key="..\:/Users/user/EMP/app/src/main/res/drawable/habit.xml" value="0.2415" />
+        <entry key="..\:/Users/user/EMP/app/src/main/res/layout/create_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/EMP/app/src/main/res/layout/edit_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/EMP/app/src/main/res/layout/login_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/EMP/app/src/main/res/layout/main.xml" value="0.264" />
+        <entry key="..\:/Users/user/EMP/app/src/main/res/layout/progress_calendar_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/EMP/app/src/main/res/layout/progress_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/EMP/app/src/main/res/layout/register_page.xml" value="0.2" />
+        <entry key="..\:/Users/user/EMP/app/src/main/res/layout/setting_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/EMP/app/src/main/res/layout/shop_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/user/EMP/app/src/main/res/menu/edit_habit_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
