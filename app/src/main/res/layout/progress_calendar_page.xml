@@ -7,7 +7,7 @@
     android:background="@color/fon">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -37,5 +37,15 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_add_coin"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/coin" />
+
+    <CalendarView
+        android:id="@+id/progress_calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_add_coin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
