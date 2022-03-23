@@ -6,18 +6,28 @@
     android:layout_height="match_parent"
     android:background="@color/fon">
 
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="409dp"
+        android:layout_height="500dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
     <TextView
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
         android:layout_marginStart="20dp"
         android:fontFamily="@font/nunito_bold"
         android:text="Register"
         android:textColor="@color/my_black"
         android:textSize="36dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/frameLayout2" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -25,14 +35,18 @@
         android:layout_height="44dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="203dp"
-        android:ems="10"
+        android:layout_marginTop="5dp"
         android:background="@drawable/edit_text_style"
-        android:textSize="16dp"
+        android:ems="10"
         android:fontFamily="@font/nunito_regular"
         android:inputType="textEmailAddress"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textCursorDrawable="@drawable/cursor_style"
+        android:textSize="20sp"
 
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/full_name"
+        tools:layout_editor_absoluteX="20dp" />
 
     <TextView
         android:id="@+id/full_name"
@@ -42,7 +56,7 @@
         android:layout_marginTop="20dp"
         android:text="Full Name"
         android:fontFamily="@font/nunito_regular"
-        android:textSize="14dp"
+        android:textSize="16sp"
         android:textColor="@color/my_black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register" />
@@ -56,7 +70,7 @@
         android:text="Email"
         android:fontFamily="@font/nunito_regular"
         android:textColor="@color/my_black"
-        android:textSize="14dp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
@@ -67,9 +81,16 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="5dp"
+        android:autofillHints=""
+        android:background="@drawable/edit_text_style"
+        android:textCursorDrawable="@drawable/cursor_style"
         android:ems="10"
-        android:background="@drawable/button"
+        android:fontFamily="@font/nunito_regular"
         android:inputType="textEmailAddress"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:singleLine="false"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />
 
@@ -81,7 +102,7 @@
         android:layout_marginTop="15dp"
         android:text="Password"
         android:fontFamily="@font/nunito_regular"
-        android:textSize="14dp"
+        android:textSize="16sp"
         android:textColor="@color/my_black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
@@ -93,9 +114,15 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="20dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@drawable/edit_text_style"
+        android:textCursorDrawable="@drawable/cursor_style"
         android:ems="10"
+        android:fontFamily="@font/nunito_regular"
         android:inputType="textPassword"
-        android:background="@drawable/button"
+        android:textSize="20sp"
+        android:cursorVisible="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
@@ -119,7 +146,7 @@
         android:id="@+id/insta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="65dp"
         android:layout_marginTop="20dp"
         android:background="@android:color/transparent"
         app:layout_constraintStart_toStartOf="parent"
@@ -162,4 +189,5 @@
         android:textSize="16dp"
         app:layout_constraintStart_toEndOf="@+id/member"
         app:layout_constraintTop_toBottomOf="@+id/btn_register" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
