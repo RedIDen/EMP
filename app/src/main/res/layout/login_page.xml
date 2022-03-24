@@ -50,6 +50,8 @@
         android:layout_marginStart="105dp"
         android:layout_marginTop="350dp"
         android:text="Register"
+        android:clickable="true"
+        android:enabled="true"
         android:fontFamily="@font/nunito_bold"
         android:textSize="16sp"
         android:textColor="@color/my_black"

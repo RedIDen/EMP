@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             public void onFinish() {
-                setContentView(R.layout.main);
+                setContentView(R.layout.login_page);
             }
         }.start();
     }
