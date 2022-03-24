@@ -2,19 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     >
      <item android:id="@+id/today"
-         android:title=" "
+         android:title=""
+         android:enabled="true"
          android:icon="@drawable/ic_todo">
      </item>
      <item android:id="@+id/progress"
-         android:title=" "
+         android:title=""
+         android:enabled="true"
          android:icon="@drawable/ic_progress">
      </item>
      <item android:id="@+id/shop"
-         android:title=" "
+         android:title=""
+         android:enabled="true"
          android:icon="@drawable/ic_shop">
      </item>
      <item android:id="@+id/setting"
-         android:title=" "
+         android:title=""
+         android:enabled="true"
          android:icon="@drawable/ic_setting">
      </item>
 </menu>
