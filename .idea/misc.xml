@@ -6,9 +6,18 @@
         <entry key="..\:/EMP/app/src/main/res/drawable/cursor_style.xml" value="0.2645" />
         <entry key="..\:/EMP/app/src/main/res/drawable/edit_text_style.xml" value="0.2645" />
         <entry key="..\:/EMP/app/src/main/res/layout/activity_main.xml" value="0.2453125" />
+        <entry key="..\:/EMP/app/src/main/res/layout/create_page.xml" value="0.259375" />
+        <entry key="..\:/EMP/app/src/main/res/layout/edit_page.xml" value="0.259375" />
+        <entry key="..\:/EMP/app/src/main/res/layout/greeting_layout.xml" value="0.259375" />
         <entry key="..\:/EMP/app/src/main/res/layout/login_page.xml" value="0.264" />
         <entry key="..\:/EMP/app/src/main/res/layout/main.xml" value="0.259375" />
+        <entry key="..\:/EMP/app/src/main/res/layout/progress_calendar_page.xml" value="0.259375" />
+        <entry key="..\:/EMP/app/src/main/res/layout/progress_page.xml" value="0.259375" />
         <entry key="..\:/EMP/app/src/main/res/layout/register_page.xml" value="0.20969202898550723" />
+        <entry key="..\:/EMP/app/src/main/res/layout/setting_page.xml" value="0.259375" />
+        <entry key="..\:/EMP/app/src/main/res/layout/shop_page.xml" value="0.259375" />
+        <entry key="..\:/EMP/app/src/main/res/menu/bottomappbar_menu.xml" value="0.259375" />
+        <entry key="..\:/EMP/app/src/main/res/menu/edit_habit_menu.xml" value="0.259375" />
         <entry key="..\:/EMP/app/src/main/res/menu/menu.xml" value="0.259375" />
         <entry key="..\:/Users/user/AndroidStudioProjects/grow/app/src/main/res/drawable/button.xml" value="0.2415" />
         <entry key="..\:/Users/user/AndroidStudioProjects/grow/app/src/main/res/drawable/edit_text_style.xml" value="0.2415" />

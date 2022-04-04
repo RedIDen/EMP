@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -23,12 +24,11 @@ public class MainActivity extends AppCompatActivity {
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         new CountDownTimer(2000, 1000) {
-
             public void onTick(long millisUntilFinished) {
             }
 
             public void onFinish() {
-                setContentView(R.layout.login_page);
+                startActivity(new Intent(MainActivity.this, Login_page.class));
             }
         }.start();
     }
