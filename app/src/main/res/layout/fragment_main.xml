@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/fon"
-    tools:context=".Main">
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="83dp"
-        android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="-83dp"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/tap_bar" />
@@ -64,21 +65,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginStart="325dp"
         android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_plus_btn" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="@drawable/tap_bar"
-        app:elevation="8dp"
-
-        app:itemPaddingTop="28dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/menu" />
 
     <LinearLayout
         android:layout_width="160dp"
@@ -96,8 +88,8 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginStart="29dp"
-            android:layout_marginEnd="29dp"
-            android:layout_marginTop="42dp"/>
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="29dp" />
 
         <TextView
             android:id="@+id/habit_number"
@@ -109,8 +101,6 @@
             android:text="1"
             android:textColor="@color/my_white"
             android:textSize="24dp" />
-
-
 
         <CheckBox
             android:id="@+id/checkBox"
@@ -131,9 +121,5 @@
             android:layout_marginTop="-175dp"
             app:srcCompat="@drawable/ic_dot_habit" />
 
-
-
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,38 +9,25 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
-public class Login_page extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_page);
+        setContentView(R.layout.activity_login);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         mAuth = FirebaseAuth.getInstance();
-        mAuthListener = firebaseAuth -> {
-            FirebaseUser user = firebaseAuth.getCurrentUser();
-            if (user != null) {
-                startActivity(new Intent(Login_page.this, Main.class));
-            }
-        };
 
         TextView register = findViewById(R.id.register);
-        register.setOnClickListener(x -> startActivity(new Intent(Login_page.this, Register_page.class)));
+        register.setOnClickListener(x -> startActivity(new Intent(LoginActivity.this, RegisterActivity.class)));
 
         Button login = findViewById(R.id.btn_login);
         login.setOnClickListener(x -> {
@@ -48,10 +35,10 @@ public class Login_page extends AppCompatActivity {
             String password = ((EditText)findViewById(R.id.editTextTextPassword)).getText().toString();
             mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, task -> {
                 if(task.isSuccessful()) {
-                    Toast.makeText(Login_page.this, "Authorized successfully", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(Login_page.this, Main.class));
+                    Toast.makeText(LoginActivity.this, "Authorized successfully", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 } else {
-                    Toast.makeText(Login_page.this, "Wrong e-mail or password", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Wrong e-mail or password", Toast.LENGTH_LONG).show();
                 }
             });
         });

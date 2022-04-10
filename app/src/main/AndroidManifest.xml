@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Grow">
         <activity
-            android:name=".MainActivity"
+            android:name=".GreetingActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Main"
+            android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Login_page"
+            android:name=".LoginActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -38,7 +38,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Register_page"
+            android:name=".RegisterActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -46,7 +46,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Create_page"
+            android:name=".CreateActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -54,31 +54,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Edit_page"
-            android:exported="true"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".Progress_page"
-            android:exported="true"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".Shop_page"
-            android:exported="true"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".Setting_page"
+            android:name=".EditActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

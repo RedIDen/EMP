@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    >
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
      <item android:id="@+id/today"
          android:title=""
          android:enabled="true"
@@ -10,6 +9,10 @@
          android:title=""
          android:enabled="true"
          android:icon="@drawable/ic_progress">
+     </item>
+     <item android:id="@+id/add"
+         android:title="ADD"
+         android:enabled="false">
      </item>
      <item android:id="@+id/shop"
          android:title=""

@@ -24,7 +24,6 @@
         android:icon="@drawable/ic_shop"
         >
     </item>
-
     <item
         android:title=" "
         android:id="@+id/setting"
