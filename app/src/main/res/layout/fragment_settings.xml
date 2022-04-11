@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     android:background="@color/fon">
 
+    <TextView
+        android:id="@+id/settingsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nunito_regular"
+        android:text="Your progress"
+        android:textColor="@color/my_black"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="wrap_content"

@@ -22,7 +22,7 @@ public class GreetingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_greeting);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        new CountDownTimer(2000, 1000) {
+        new CountDownTimer(1000, 1000) {
             public void onTick(long millisUntilFinished) {
             }
 

@@ -7,13 +7,14 @@
         <entry key="..\:/EMP/app/src/main/res/drawable/edit_text_style.xml" value="0.2645" />
         <entry key="..\:/EMP/app/src/main/res/drawable/tap_bar.xml" value="0.252" />
         <entry key="..\:/EMP/app/src/main/res/layout/activity_calendar.xml" value="0.176" />
-        <entry key="..\:/EMP/app/src/main/res/layout/activity_create.xml" value="0.2391304347826087" />
+        <entry key="..\:/EMP/app/src/main/res/layout/activity_create.xml" value="0.4" />
+        <entry key="..\:/EMP/app/src/main/res/layout/activity_greeting.xml" value="0.22282608695652173" />
         <entry key="..\:/EMP/app/src/main/res/layout/activity_login.xml" value="0.2391304347826087" />
         <entry key="..\:/EMP/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/EMP/app/src/main/res/layout/activity_register.xml" value="0.2391304347826087" />
         <entry key="..\:/EMP/app/src/main/res/layout/create_page.xml" value="0.259375" />
         <entry key="..\:/EMP/app/src/main/res/layout/edit_page.xml" value="0.259375" />
-        <entry key="..\:/EMP/app/src/main/res/layout/fragment_main.xml" value="0.264" />
+        <entry key="..\:/EMP/app/src/main/res/layout/fragment_main.xml" value="0.2" />
         <entry key="..\:/EMP/app/src/main/res/layout/fragment_progress.xml" value="0.2391304347826087" />
         <entry key="..\:/EMP/app/src/main/res/layout/fragment_settings.xml" value="0.2391304347826087" />
         <entry key="..\:/EMP/app/src/main/res/layout/fragment_shop.xml" value="0.2391304347826087" />

@@ -11,11 +11,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="60dp"
-        android:text="Your progress"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/nunito_regular"
-        android:textSize="24dp"
+        android:text="Your progress"
         android:textColor="@color/my_black"
+        android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
