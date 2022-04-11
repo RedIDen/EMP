@@ -62,7 +62,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Progress_calendar_page"
+            android:name=".CalendarActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
