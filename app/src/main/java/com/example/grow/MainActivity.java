@@ -16,6 +16,11 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
 
     @Override
+    public void onBackPressed() {
+        this.moveTaskToBack(true);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

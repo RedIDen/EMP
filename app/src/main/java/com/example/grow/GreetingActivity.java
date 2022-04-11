@@ -10,6 +10,7 @@ import android.view.WindowManager;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class GreetingActivity extends AppCompatActivity {
 
@@ -28,7 +29,6 @@ public class GreetingActivity extends AppCompatActivity {
             public void onFinish() {
                 mAuth = FirebaseAuth.getInstance();
                 FirebaseUser currentUser = mAuth.getCurrentUser();
-
                 startActivity(new Intent(GreetingActivity.this, LoginActivity.class));
                 if (currentUser != null) {
                     startActivity(new Intent(GreetingActivity.this, MainActivity.class));
