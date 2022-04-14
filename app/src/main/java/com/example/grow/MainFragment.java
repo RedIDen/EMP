@@ -4,19 +4,25 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.grow.Adapters.HabitAdapter;
+import com.example.grow.Models.Habit;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.type.DateTime;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainFragment extends Fragment {
-
-    private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -55,6 +61,34 @@ public class MainFragment extends Fragment {
         view.findViewById(R.id.add_habit).setOnClickListener(x -> {
             startActivity(new Intent(getActivity(), CreateActivity.class));
         });
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        List<Habit> habits = new ArrayList<>();
+
+        db.collection(mAuth.getCurrentUser().getUid()).get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()){
+                for (QueryDocumentSnapshot document : task.getResult()) {
+                    Habit habit = new Habit(
+                            document.getId(),
+                            (String)document.get("Title"),
+                            (String)document.get("Flower"),
+                            new boolean[28]
+                    );
+
+                    habits.add(habit);
+                }
+
+                RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this.getActivity(), 2);
+
+                RecyclerView habitsRecycler = view.findViewById(R.id.habits_layout);
+                habitsRecycler.setLayoutManager(layoutManager);
+
+                HabitAdapter adapter = new HabitAdapter(this.getActivity(), habits);
+                habitsRecycler.setAdapter(adapter);
+            }
+        });
+
         return view;
     }
 }

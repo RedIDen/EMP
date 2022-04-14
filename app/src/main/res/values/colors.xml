@@ -2,6 +2,7 @@
 <resources>
     <color name="fon">#CAD89D</color>
     <color name="primary">#276454</color>
+    <color name="primary_darker">#1B453A</color>
     <color name="secondary">#FFBD59</color>
     <color name="my_white">#F1F5F5</color>
     <color name="my_black">#282828</color>
