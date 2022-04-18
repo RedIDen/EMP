@@ -44,6 +44,7 @@ public class CreateActivity extends AppCompatActivity {
         Map<String, Object> habit = new HashMap<>();
         habit.put("Title", ((EditText)findViewById(R.id.create_habit)).getText().toString());
         habit.put("Flower", "flower.png");
+        habit.put("DaysResults", "+++++-----------------------");
         db.collection(FirebaseAuth.getInstance().getCurrentUser().getUid()).add(habit);
     }
 }

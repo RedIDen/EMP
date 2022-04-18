@@ -9,12 +9,15 @@ public class Habit {
 
     public Habit(String uid, String title, String flowerLink,
                  //DateTime beginDate,
-                 boolean[] daysResults) {
+                 String daysResults) {
         this.uid = uid;
         this.title = title;
         this.flowerLink = flowerLink;
         //this.beginDate = beginDate;
-        this.daysResults = daysResults;
+        this.daysResults = new boolean[daysResults.length()];
+        for (int i = 0; i < daysResults.length(); i++){
+            this.daysResults[i] = daysResults.charAt(i) == '+';
+        }
     }
 
     public String getUid() {

@@ -73,11 +73,13 @@ public class MainFragment extends Fragment {
                             document.getId(),
                             (String)document.get("Title"),
                             (String)document.get("Flower"),
-                            new boolean[28]
+                            (String)document.get("DaysResults")
                     );
 
                     habits.add(habit);
                 }
+
+                view.findViewById(R.id.no_habits_text).setVisibility(habits.size() > 0 ? View.GONE : View.VISIBLE);
 
                 RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this.getActivity(), 2);
 
@@ -86,6 +88,8 @@ public class MainFragment extends Fragment {
 
                 HabitAdapter adapter = new HabitAdapter(this.getActivity(), habits);
                 habitsRecycler.setAdapter(adapter);
+
+                view.findViewById(R.id.loading_progress_bar).setVisibility(View.GONE);
             }
         });
 
