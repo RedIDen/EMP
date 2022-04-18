@@ -1,6 +1,5 @@
 package com.example.grow;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
@@ -10,9 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.type.DateTime;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,7 +44,8 @@ public class CreateActivity extends AppCompatActivity {
         Map<String, Object> habit = new HashMap<>();
         habit.put("Title", ((EditText)findViewById(R.id.create_habit)).getText().toString());
         habit.put("Flower", "flower.png");
-        habit.put("DaysResults", "+++++-----------------------");
+        habit.put("DaysResults", "----------------------------");
+        habit.put("StartDate", new SimpleDateFormat("MM.dd.yyyy").format(new Date()));
         db.collection(FirebaseAuth.getInstance().getCurrentUser().getUid()).add(habit);
     }
 }

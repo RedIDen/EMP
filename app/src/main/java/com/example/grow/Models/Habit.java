@@ -1,11 +1,14 @@
 package com.example.grow.Models;
 
+import com.google.type.DateTime;
+
 public class Habit {
-    String uid;
-    String title;
-    String flowerLink;
-    //DateTime beginDate;
-    boolean[] daysResults;
+    private String uid;
+    private String title;
+    private String flowerLink;
+    private DateTime beginDate;
+    private boolean[] daysResults;
+    private boolean doneToday;
 
     public Habit(String uid, String title, String flowerLink,
                  //DateTime beginDate,

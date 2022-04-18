@@ -47,9 +47,8 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
         }
 
         int percents = (int)((count / (double)habit.getDaysResults().length) * 100);
-        int progress = percents;
 
-        holder.habitProgressBar.setProgress(progress);
+        holder.habitProgressBar.setProgress(percents);
         holder.habitProgressBar.setMax(100);
         holder.habitPercents.setText(percents + "%");
     }

@@ -13,7 +13,7 @@ import com.example.grow.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    ActivityMainBinding binding;
+    private ActivityMainBinding binding;
 
     @Override
     public void onBackPressed() {
@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new SettingsFragment());
                     break;
             }
+
             return true;
         });
     }

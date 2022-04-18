@@ -18,6 +18,7 @@
         android:layout_height="150dp"
         android:indeterminateOnly="false"
         android:layout_marginBottom="50dp"
+        android:progress="1"
         android:progressDrawable="@drawable/progressbar"
         android:rotation="-90"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -82,13 +83,13 @@
 
     <ImageButton
         android:id="@+id/habit_info"
+        android:layout_marginEnd="15dp"
         android:layout_width="30dp"
         android:layout_height="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/habit_progressBar"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        app:srcCompat="@drawable/ic_dot_habit"
-        android:contentDescription="Three dots" />
+        android:contentDescription="Three dots"
+        app:layout_constraintEnd_toEndOf="@+id/habit_num"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_dot_habit" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

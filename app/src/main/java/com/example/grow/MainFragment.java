@@ -27,6 +27,8 @@ public class MainFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    private View view;
+
     private String mParam1;
     private String mParam2;
 
@@ -54,17 +56,39 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
-        ((TextView)view.findViewById(R.id.today_text))
+        this.view = inflater.inflate(R.layout.fragment_main, container, false);
+        ((TextView)this.view.findViewById(R.id.today_text))
                 .setText("Hello, " + FirebaseAuth.getInstance().getCurrentUser().getDisplayName().toString());
 
-        view.findViewById(R.id.add_habit).setOnClickListener(x -> {
+        this.view.findViewById(R.id.add_habit).setOnClickListener(x -> {
             startActivity(new Intent(getActivity(), CreateActivity.class));
         });
 
+        fillGrid(this.view);
+        return this.view;
+    }
+
+//    @Override
+//    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+//        super.onCreateContextMenu(menu, v, menuInfo);
+//        // you can set menu header with title icon etc
+//        menu.setHeaderTitle("Choose a color");
+//        // add menu items
+//        menu.add(0, v.getId(), 0, "Yellow");
+//        menu.add(0, v.getId(), 0, "Gray");
+//        menu.add(0, v.getId(), 0, "Cyan");
+//    }
+
+    public void onResume() {
+        super.onResume();
+        fillGrid(this.view);
+    }
+
+    private void fillGrid(View view){
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         List<Habit> habits = new ArrayList<>();
+        View loading = view.findViewById(R.id.loading_progress_bar);
 
         db.collection(mAuth.getCurrentUser().getUid()).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()){
@@ -89,10 +113,10 @@ public class MainFragment extends Fragment {
                 HabitAdapter adapter = new HabitAdapter(this.getActivity(), habits);
                 habitsRecycler.setAdapter(adapter);
 
-                view.findViewById(R.id.loading_progress_bar).setVisibility(View.GONE);
+                registerForContextMenu(habitsRecycler);
+
+                loading.setVisibility(View.GONE);
             }
         });
-
-        return view;
     }
 }
