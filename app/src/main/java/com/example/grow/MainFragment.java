@@ -113,7 +113,7 @@ public class MainFragment extends Fragment {
                 RecyclerView habitsRecycler = view.findViewById(R.id.habits_layout);
                 habitsRecycler.setLayoutManager(layoutManager);
 
-                List<Habit> sorted = habits.stream().sorted(Comparator.comparing(Habit::getTitle)).collect(Collectors.toList());
+                List<Habit> sorted = habits.stream().sorted(Comparator.comparing(Habit::getDeltaDays).thenComparing(Habit::getTitle)).collect(Collectors.toList());
 
                 HabitAdapter adapter = new HabitAdapter(this.getActivity(), sorted);
                 habitsRecycler.setAdapter(adapter);
