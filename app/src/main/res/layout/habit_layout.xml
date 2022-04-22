@@ -75,7 +75,7 @@
         android:layout_marginBottom="15dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/check_box"
-        android:buttonTint="@color/my_white"
+        android:buttonTint="@color/my_black"
         android:drawableTint="@color/my_white"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"

@@ -20,7 +20,9 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.type.DateTime;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MainFragment extends Fragment {
 
@@ -97,6 +99,7 @@ public class MainFragment extends Fragment {
                             document.getId(),
                             (String)document.get("Title"),
                             (String)document.get("Flower"),
+                            (String)document.get("StartDate"),
                             (String)document.get("DaysResults")
                     );
 
@@ -110,10 +113,10 @@ public class MainFragment extends Fragment {
                 RecyclerView habitsRecycler = view.findViewById(R.id.habits_layout);
                 habitsRecycler.setLayoutManager(layoutManager);
 
-                HabitAdapter adapter = new HabitAdapter(this.getActivity(), habits);
-                habitsRecycler.setAdapter(adapter);
+                List<Habit> sorted = habits.stream().sorted(Comparator.comparing(Habit::getTitle)).collect(Collectors.toList());
 
-                registerForContextMenu(habitsRecycler);
+                HabitAdapter adapter = new HabitAdapter(this.getActivity(), sorted);
+                habitsRecycler.setAdapter(adapter);
 
                 loading.setVisibility(View.GONE);
             }

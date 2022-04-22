@@ -22,8 +22,7 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
     Context context;
     List<Habit> habits;
 
-    public HabitAdapter(Context context, List<Habit> habits)
-    {
+    public HabitAdapter(Context context, List<Habit> habits) {
         this.habits = habits;
         this.context = context;
     }
@@ -51,6 +50,9 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
         holder.habitProgressBar.setProgress(percents);
         holder.habitProgressBar.setMax(100);
         holder.habitPercents.setText(percents + "%");
+        if (habit.getDaysResults()[(int)habit.getDeltaDays()]) {
+            this.checkCheckBox(holder.habitCheckBox);
+        }
     }
 
     @Override
@@ -59,7 +61,6 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
     }
 
     public static final class HabitViewHolder extends RecyclerView.ViewHolder {
-
         TextView habitTitle, habitNumb, habitPercents;
         ProgressBar habitProgressBar;
         ImageButton habitInfo;
@@ -74,5 +75,10 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
             this.habitNumb = itemView.findViewById(R.id.habit_num);
             this.habitPercents = itemView.findViewById(R.id.habit_percents);
         }
+    }
+
+    private void checkCheckBox(@NonNull CheckBox checkBox) {
+        checkBox.setChecked(true);
+        checkBox.setActivated(false);
     }
 }
