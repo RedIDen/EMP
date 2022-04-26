@@ -10,8 +10,9 @@ public class Habit {
     private String title;
     private String flowerLink;
     private Date beginDate;
-    private long deltaDays;
-    private boolean[] daysResults;
+    private int deltaDays;
+    private String daysResults;
+    private boolean checkedToday;
 
     public Habit(String uid, String title, String flowerLink,
                  String beginDate,
@@ -23,15 +24,15 @@ public class Habit {
             this.beginDate = new SimpleDateFormat("MM.dd.yyyy").parse(beginDate);
             Date today = new Date();
             long diffInMilliseconds = today.getTime() - this.beginDate.getTime();
-            this.deltaDays = TimeUnit.DAYS.convert(diffInMilliseconds, TimeUnit.MILLISECONDS);
+            this.deltaDays = (int)TimeUnit.DAYS.convert(diffInMilliseconds, TimeUnit.MILLISECONDS);
+            this.deltaDays = this.deltaDays > 27 ? 27 : this.deltaDays;
         }
         catch (ParseException e) {
             e.printStackTrace();
         }
-        this.daysResults = new boolean[daysResults.length()];
-        for (int i = 0; i < daysResults.length(); i++){
-            this.daysResults[i] = daysResults.charAt(i) == '+';
-        }
+
+        this.daysResults = daysResults;
+        this.checkedToday = daysResults.charAt(this.deltaDays) == '+';
     }
 
     public long getDeltaDays() {
@@ -58,11 +59,19 @@ public class Habit {
         this.flowerLink = flowerLink;
     }
 
-    public boolean[] getDaysResults() {
+    public String getDaysResults() {
         return daysResults;
     }
 
-    public void setDaysResults(boolean[] daysResults) {
+    public void setDaysResults(String daysResults) {
         this.daysResults = daysResults;
+    }
+
+    public boolean isCheckedToday() {
+        return checkedToday;
+    }
+
+    public void setCheckedToday(boolean checkedToday) {
+        this.checkedToday = checkedToday;
     }
 }

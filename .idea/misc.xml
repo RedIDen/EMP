@@ -5,10 +5,12 @@
       <map>
         <entry key="..\:/EMP/app/src/main/res/drawable/cursor_style.xml" value="0.2645" />
         <entry key="..\:/EMP/app/src/main/res/drawable/edit_text_style.xml" value="0.2645" />
+        <entry key="..\:/EMP/app/src/main/res/drawable/fullProgressBar.xml" value="0.2585" />
         <entry key="..\:/EMP/app/src/main/res/drawable/progressbar.xml" value="0.249" />
         <entry key="..\:/EMP/app/src/main/res/drawable/tap_bar.xml" value="0.252" />
         <entry key="..\:/EMP/app/src/main/res/layout/activity_calendar.xml" value="0.176" />
         <entry key="..\:/EMP/app/src/main/res/layout/activity_create.xml" value="0.4" />
+        <entry key="..\:/EMP/app/src/main/res/layout/activity_edit.xml" value="0.2509057971014493" />
         <entry key="..\:/EMP/app/src/main/res/layout/activity_greeting.xml" value="0.22282608695652173" />
         <entry key="..\:/EMP/app/src/main/res/layout/activity_login.xml" value="0.2391304347826087" />
         <entry key="..\:/EMP/app/src/main/res/layout/activity_main.xml" value="0.2" />

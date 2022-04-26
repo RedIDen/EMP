@@ -14,6 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.grow.Models.Habit;
 import com.example.grow.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
@@ -40,17 +43,40 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
         holder.habitTitle.setText(habit.getTitle());
         holder.habitNumb.setText(" " + (position + 1) + " ");
 
+        char[] daysArray = habit.getDaysResults().toCharArray();
+
         int count = 0;
-        for (boolean day: habit.getDaysResults()) {
-            count += day ? 1 : 0;
+        for (char day: daysArray) {
+            count += day == '+' ? 1 : 0;
         }
 
-        int percents = (int)((count / (double)habit.getDaysResults().length) * 100);
+        int fullPercents = (int)(habit.getDeltaDays() + 1);
 
-        holder.habitProgressBar.setProgress(percents);
-        holder.habitProgressBar.setMax(100);
-        holder.habitPercents.setText(percents + "%");
-        if (habit.getDaysResults()[(int)habit.getDeltaDays()]) {
+        holder.habitFullProgressBar.setProgress(fullPercents);
+        holder.habitFullProgressBar.setMax(28);
+
+        holder.habitProgressBar.setProgress(count);
+        holder.habitProgressBar.setMax(28);
+
+        holder.habitPercents.setText((int)(count * 100 / 28.) + "%");
+
+        holder.habitCheckBox.setOnClickListener(view -> {
+            FirebaseAuth mAuth = FirebaseAuth.getInstance();
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+            DocumentReference document = db.collection(mAuth.getCurrentUser().getUid()).document(habit.getUid());
+
+            daysArray[(int)habit.getDeltaDays()] = '+';
+
+            int newProgress = holder.habitProgressBar.getProgress() + 1;
+            holder.habitProgressBar.setProgress(newProgress);
+            holder.habitPercents.setText((int)(newProgress * 100 / 28.) + "%");
+
+            document.update("DaysResults", new String(daysArray));
+
+            this.checkCheckBox(holder.habitCheckBox);
+        });
+
+        if (daysArray[(int)habit.getDeltaDays()] == '+') {
             this.checkCheckBox(holder.habitCheckBox);
         }
     }
@@ -62,7 +88,7 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
 
     public static final class HabitViewHolder extends RecyclerView.ViewHolder {
         TextView habitTitle, habitNumb, habitPercents;
-        ProgressBar habitProgressBar;
+        ProgressBar habitProgressBar, habitFullProgressBar;
         ImageButton habitInfo;
         CheckBox habitCheckBox;
 
@@ -71,6 +97,7 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
             this.habitCheckBox = itemView.findViewById(R.id.habit_checkbox);
             this.habitInfo = itemView.findViewById(R.id.habit_info);
             this.habitProgressBar = itemView.findViewById(R.id.habit_progressBar);
+            this.habitFullProgressBar = itemView.findViewById(R.id.habit_fullProgressBar);
             this.habitTitle = itemView.findViewById(R.id.habit_title);
             this.habitNumb = itemView.findViewById(R.id.habit_num);
             this.habitPercents = itemView.findViewById(R.id.habit_percents);
@@ -79,6 +106,6 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
 
     private void checkCheckBox(@NonNull CheckBox checkBox) {
         checkBox.setChecked(true);
-        checkBox.setActivated(false);
+        checkBox.setClickable(false);
     }
 }

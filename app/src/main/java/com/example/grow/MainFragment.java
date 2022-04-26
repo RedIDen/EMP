@@ -17,7 +17,6 @@ import com.example.grow.Models.Habit;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.type.DateTime;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -113,7 +112,12 @@ public class MainFragment extends Fragment {
                 RecyclerView habitsRecycler = view.findViewById(R.id.habits_layout);
                 habitsRecycler.setLayoutManager(layoutManager);
 
-                List<Habit> sorted = habits.stream().sorted(Comparator.comparing(Habit::getDeltaDays).thenComparing(Habit::getTitle)).collect(Collectors.toList());
+                List<Habit> sorted = habits.stream()
+                        .sorted(Comparator
+                                .comparing(Habit::getDeltaDays)
+                                .thenComparing(Habit::isCheckedToday)
+                                .thenComparing(Habit::getTitle))
+                        .collect(Collectors.toList());
 
                 HabitAdapter adapter = new HabitAdapter(this.getActivity(), sorted);
                 habitsRecycler.setAdapter(adapter);

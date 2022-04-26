@@ -4,8 +4,16 @@
         <shape
             android:shape="ring"
             android:thicknessRatio="16"
+            android:useLevel="false">
+            <solid android:color="@color/primary_darker"/>
+        </shape>
+    </item>
+    <item>
+        <shape
+            android:shape="ring"
+            android:thicknessRatio="16"
             android:useLevel="true">
-            <solid android:color="@color/my_white"/>
+            <solid android:color="@color/my_red"/>
         </shape>
     </item>
 </layer-list>
