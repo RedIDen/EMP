@@ -59,7 +59,7 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
                 message = "Did you grow your flowers?";
                 break;
             case 2:
-                message = "Your flowers are waiting for you";
+                message = "Your flowers are waiting for you!";
                 break;
             default:
                 message = "What about your habits?";

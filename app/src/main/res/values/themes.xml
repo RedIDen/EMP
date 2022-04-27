@@ -13,4 +13,9 @@
         <item name="colorControlNormal">@color/my_white</item>
         <item name="colorControlActivated">@color/my_white</item>
     </style>
+    <style name="TimePickerTheme" parent="ThemeOverlay.MaterialComponents.Dialog">
+        <item name="colorAccent">@color/primary</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
 </resources>

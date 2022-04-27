@@ -72,7 +72,7 @@ public class SettingsFragment extends Fragment {
                 Toast.makeText(getContext(), "New notification time has been set", Toast.LENGTH_LONG).show();
             };
 
-            TimePickerDialog dialog = new TimePickerDialog(getContext(), onTimeSetListener, hours, minutes, true);
+            TimePickerDialog dialog = new TimePickerDialog(getContext(), R.style.TimePickerTheme, onTimeSetListener, hours, minutes, true);
             dialog.setTitle("Select time");
             dialog.show();
         });

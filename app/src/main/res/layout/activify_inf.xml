@@ -374,6 +374,7 @@
         android:layout_marginBottom="5dp"
         android:backgroundTint="@color/my_red"
         android:text="Delete"
+        app:cornerRadius="14dp"
         app:layout_constraintBottom_toTopOf="@+id/day0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
