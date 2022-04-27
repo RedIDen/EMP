@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/flower_info"
-        android:layout_width="300dp"
-        android:layout_height="350dp"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_right_info"
         app:layout_constraintStart_toEndOf="@+id/button_left_info"
