@@ -66,6 +66,10 @@ public class InfoActivity extends AppCompatActivity {
 
         ((ImageView)findViewById(R.id.flower_info_image)).setImageResource(this.flowers[habit.getFlowerId()][(count - 1) / 9]);
 
+        findViewById(R.id.cancel_info).setOnClickListener(view -> {
+            finish();
+        });
+
         EditText title = findViewById(R.id.edit_habit);
         title.setText(habit.getTitle());
         title.addTextChangedListener(new TextWatcher() {
