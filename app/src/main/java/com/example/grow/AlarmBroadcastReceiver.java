@@ -51,7 +51,7 @@ public class AlarmBroadcastReceiver extends BroadcastReceiver {
 
         Random random = new Random();
         String message;
-        switch (random.nextInt(3)){
+        switch (random.nextInt(4)){
             case 0:
                 message = "Don't forget about your habits!";
                 break;
