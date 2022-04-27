@@ -87,7 +87,7 @@ public class MainFragment extends Fragment {
                         Habit habit = new Habit(
                                 document.getId(),
                                 (String) document.get("Title"),
-                                (String) document.get("Flower"),
+                                Integer.parseInt((String)document.get("Flower")),
                                 (String) document.get("StartDate"),
                                 (String) document.get("DaysResults")
                         );
@@ -105,8 +105,8 @@ public class MainFragment extends Fragment {
 
                 List<Habit> sorted = habits.stream()
                         .sorted(Comparator
-                                .comparing(Habit::getDeltaDays)
-                                .thenComparing(Habit::isCheckedToday)
+                                .comparing(Habit::isCheckedToday)
+                                .thenComparing(Habit::getDeltaDays)
                                 .thenComparing(Habit::getTitle))
                         .collect(Collectors.toList());
 

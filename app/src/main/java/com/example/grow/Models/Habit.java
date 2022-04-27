@@ -8,18 +8,18 @@ import java.util.concurrent.TimeUnit;
 public class Habit {
     private String uid;
     private String title;
-    private String flowerLink;
+    private int flowerId;
     private Date beginDate;
     private int deltaDays;
     private String daysResults;
     private boolean checkedToday;
 
-    public Habit(String uid, String title, String flowerLink,
+    public Habit(String uid, String title, int flowerId,
                  String beginDate,
                  String daysResults) {
         this.uid = uid;
         this.title = title;
-        this.flowerLink = flowerLink;
+        this.flowerId = flowerId;
         try {
             this.beginDate = new SimpleDateFormat("MM.dd.yyyy").parse(beginDate);
             Date today = new Date();
@@ -51,12 +51,12 @@ public class Habit {
         this.title = title;
     }
 
-    public String getFlowerLink() {
-        return flowerLink;
+    public int getFlowerId() {
+        return flowerId;
     }
 
-    public void setFlowerLink(String flowerLink) {
-        this.flowerLink = flowerLink;
+    public void setFlowerId(int flowerId) {
+        this.flowerId = flowerId;
     }
 
     public String getDaysResults() {
