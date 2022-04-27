@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.grow.InfoActivity;
+import com.example.grow.MainFragment;
 import com.example.grow.Models.Habit;
 import com.example.grow.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,13 +24,16 @@ import java.util.List;
 
 public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHolder> {
 
+    public static Habit habitForInfo;
+
     Context context;
     List<Habit> habits;
+    MainFragment parent;
 
-    public HabitAdapter(Context context, List<Habit> habits) {
+    public HabitAdapter(Context context, List<Habit> habits, MainFragment parent) {
         this.habits = habits;
         this.context = context;
-    }
+        this.parent = parent; }
 
     @NonNull
     @Override
@@ -75,9 +79,12 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
             document.update("DaysResults", new String(daysArray));
 
             this.checkCheckBox(holder.habitCheckBox);
+
+            parent.onResume();
         });
 
         holder.itemView.setOnClickListener(view -> {
+            habitForInfo = habit;
             context.startActivity(new Intent(context, InfoActivity.class));
         });
 

@@ -74,7 +74,7 @@ public class MainFragment extends Fragment {
         fillGrid(this.view);
     }
 
-    private void fillGrid(View view) {
+    public void fillGrid(View view) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         List<Habit> habits = new ArrayList<>();
@@ -110,7 +110,7 @@ public class MainFragment extends Fragment {
                                 .thenComparing(Habit::getTitle))
                         .collect(Collectors.toList());
 
-                HabitAdapter adapter = new HabitAdapter(this.getActivity(), sorted);
+                HabitAdapter adapter = new HabitAdapter(this.getActivity(), sorted, this);
                 habitsRecycler.setAdapter(adapter);
 
                 loading.setVisibility(View.GONE);
