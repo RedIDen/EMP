@@ -13,8 +13,6 @@ import com.example.grow.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
-
     @Override
     public void onBackPressed() {
         this.moveTaskToBack(true);
@@ -27,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        com.example.grow.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         replaceFragment(new MainFragment());
@@ -39,9 +37,6 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.progress:
                     replaceFragment(new ProgressFragment());
-                    break;
-                case R.id.shop:
-                    replaceFragment(new ShopFragment());
                     break;
                 case R.id.setting:
                     replaceFragment(new SettingsFragment());

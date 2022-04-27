@@ -58,7 +58,7 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         this.view = inflater.inflate(R.layout.fragment_main, container, false);
-        ((TextView)this.view.findViewById(R.id.today_text))
+        ((TextView) this.view.findViewById(R.id.today_text))
                 .setText("Hello, " + FirebaseAuth.getInstance().getCurrentUser().getDisplayName().toString());
 
         this.view.findViewById(R.id.add_habit).setOnClickListener(x -> {
@@ -69,40 +69,31 @@ public class MainFragment extends Fragment {
         return this.view;
     }
 
-//    @Override
-//    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-//        super.onCreateContextMenu(menu, v, menuInfo);
-//        // you can set menu header with title icon etc
-//        menu.setHeaderTitle("Choose a color");
-//        // add menu items
-//        menu.add(0, v.getId(), 0, "Yellow");
-//        menu.add(0, v.getId(), 0, "Gray");
-//        menu.add(0, v.getId(), 0, "Cyan");
-//    }
-
     public void onResume() {
         super.onResume();
         fillGrid(this.view);
     }
 
-    private void fillGrid(View view){
+    private void fillGrid(View view) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         List<Habit> habits = new ArrayList<>();
         View loading = view.findViewById(R.id.loading_progress_bar);
 
         db.collection(mAuth.getCurrentUser().getUid()).get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()){
+            if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
-                    Habit habit = new Habit(
-                            document.getId(),
-                            (String)document.get("Title"),
-                            (String)document.get("Flower"),
-                            (String)document.get("StartDate"),
-                            (String)document.get("DaysResults")
-                    );
+                    if (((String) document.get("DaysResults")).contains("-")) {
+                        Habit habit = new Habit(
+                                document.getId(),
+                                (String) document.get("Title"),
+                                (String) document.get("Flower"),
+                                (String) document.get("StartDate"),
+                                (String) document.get("DaysResults")
+                        );
 
-                    habits.add(habit);
+                        habits.add(habit);
+                    }
                 }
 
                 view.findViewById(R.id.no_habits_text).setVisibility(habits.size() > 0 ? View.GONE : View.VISIBLE);

@@ -1,17 +1,18 @@
 package com.example.grow.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.grow.EditActivity;
 import com.example.grow.Models.Habit;
 import com.example.grow.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -76,9 +77,15 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
             this.checkCheckBox(holder.habitCheckBox);
         });
 
+        holder.itemView.setOnClickListener(view -> {
+            context.startActivity(new Intent(context, EditActivity.class));
+        });
+
         if (daysArray[(int)habit.getDeltaDays()] == '+') {
             this.checkCheckBox(holder.habitCheckBox);
         }
+
+        holder.habitTitle.setSelected(true);
     }
 
     @Override
@@ -89,13 +96,11 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
     public static final class HabitViewHolder extends RecyclerView.ViewHolder {
         TextView habitTitle, habitNumb, habitPercents;
         ProgressBar habitProgressBar, habitFullProgressBar;
-        ImageButton habitInfo;
         CheckBox habitCheckBox;
 
         public HabitViewHolder(@NonNull View itemView) {
             super(itemView);
             this.habitCheckBox = itemView.findViewById(R.id.habit_checkbox);
-            this.habitInfo = itemView.findViewById(R.id.habit_info);
             this.habitProgressBar = itemView.findViewById(R.id.habit_progressBar);
             this.habitFullProgressBar = itemView.findViewById(R.id.habit_fullProgressBar);
             this.habitTitle = itemView.findViewById(R.id.habit_title);
@@ -107,5 +112,6 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
     private void checkCheckBox(@NonNull CheckBox checkBox) {
         checkBox.setChecked(true);
         checkBox.setClickable(false);
+        checkBox.setBackground(null);
     }
 }

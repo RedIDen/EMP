@@ -17,11 +17,10 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:indeterminateOnly="false"
-        android:layout_marginBottom="50dp"
+        android:layout_marginTop="5dp"
         android:progress="5"
         android:progressDrawable="@drawable/full_progressbar"
         android:rotation="-90"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,11 +31,10 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:indeterminateOnly="false"
-        android:layout_marginBottom="50dp"
+        android:layout_marginTop="5dp"
         android:progress="1"
         android:progressDrawable="@drawable/progressbar"
         android:rotation="-90"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -65,20 +63,25 @@
         android:text="Suck"
         android:textColor="@color/my_white"
         android:textSize="24sp"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:scrollHorizontally="true"
         app:layout_constraintBottom_toTopOf="@+id/habit_percents"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/habit_fullProgressBar" />
 
     <TextView
         android:id="@+id/habit_percents"
         android:layout_width="0dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
         android:fontFamily="@font/nunito_regular"
         android:text="15%"
         android:textColor="@color/my_white"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/habit_checkbox"
         app:layout_constraintStart_toStartOf="@+id/habit_title" />
@@ -90,21 +93,10 @@
         android:layout_marginBottom="15dp"
         android:layout_marginEnd="15dp"
         android:background="@drawable/check_box"
-        android:buttonTint="@color/my_black"
-        android:drawableTint="@color/my_white"
+        android:button="@drawable/check"
+        android:buttonTint="@color/my_white"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageButton
-        android:id="@+id/habit_info"
-        android:layout_marginEnd="15dp"
-        android:layout_width="30dp"
-        android:layout_height="10dp"
-        android:layout_marginTop="15dp"
-        android:contentDescription="Three dots"
-        app:layout_constraintEnd_toEndOf="@+id/habit_num"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_dot_habit" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

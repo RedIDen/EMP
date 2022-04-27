@@ -10,11 +10,6 @@
          android:enabled="true"
          android:icon="@drawable/ic_progress">
      </item>
-     <item android:id="@+id/shop"
-         android:title=""
-         android:enabled="true"
-         android:icon="@drawable/ic_shop">
-     </item>
      <item android:id="@+id/setting"
          android:title=""
          android:enabled="true"
