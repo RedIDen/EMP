@@ -5,6 +5,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -44,6 +45,7 @@ public class CreateActivity extends AppCompatActivity {
 
         findViewById(R.id.button_add_habit).setOnClickListener(x -> {
             addHabit();
+            Toast.makeText(this, "New habit has been created", Toast.LENGTH_LONG).show();
             finish();
         });
 

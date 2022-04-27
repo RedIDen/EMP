@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.grow">
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_icon"
@@ -10,6 +9,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Grow"
         android:usesCleartextTraffic="true">
+        <receiver android:name=".AlarmBroadcastReceiver" >
+        </receiver>
         <activity
             android:name=".InfoActivity"
             android:exported="true"
@@ -54,14 +55,6 @@
         </activity>
         <activity
             android:name=".CreateActivity"
-            android:exported="true"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".CalendarActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

@@ -15,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.grow.Adapters.HabitAdapter;
 import com.example.grow.Models.Habit;
@@ -114,6 +115,7 @@ public class InfoActivity extends AppCompatActivity {
         {
             case 0:
                 delete();
+                Toast.makeText(this, "Habit has been deleted", Toast.LENGTH_LONG).show();
                 break;
             case 1:
                 break;
