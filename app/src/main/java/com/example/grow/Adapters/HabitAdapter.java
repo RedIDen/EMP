@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.grow.EditActivity;
+import com.example.grow.InfoActivity;
 import com.example.grow.Models.Habit;
 import com.example.grow.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -78,7 +78,7 @@ public class HabitAdapter extends RecyclerView.Adapter<HabitAdapter.HabitViewHol
         });
 
         holder.itemView.setOnClickListener(view -> {
-            context.startActivity(new Intent(context, EditActivity.class));
+            context.startActivity(new Intent(context, InfoActivity.class));
         });
 
         if (daysArray[(int)habit.getDeltaDays()] == '+') {
